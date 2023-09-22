@@ -20,3 +20,4 @@ function addcommitpush () {
 
 addcommitpush "$1"
 mkdocs gh-deploy
+open https://github.com/shane0/cheatsheets/actions

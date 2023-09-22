@@ -1,0 +1,8 @@
+x 2022-06-07 add bujo
+x 2023-09-13 copy from gitlab to github
+x 2023-09-13 setup gh pages
+x 2023-09-14 add lexi for cli tests
+x 2023-09-14 add lexi
+x 2023-09-14 lexi action for cli demo
+x 2023-09-14 setup discussion
+x 2023-09-17 deploy a new buddhism site

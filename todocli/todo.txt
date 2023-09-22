@@ -1,0 +1,7 @@
+(A) use this often and keep it updated
+(B) add cors api request example
+(B) test stuff.sh and tune up
+(B) fix the cookiecutter hook on macos
+(B) add vscode snippets
+(A) add cookiecutter variables for mkdocs
+(A) document using gh pages

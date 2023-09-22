@@ -1,0 +1,11 @@
+behave
+cookiecutter
+click
+pyperclip
+mike
+pathlib
+mkdocs
+mkdocs-material
+mkdocs-git-revision-date-localized-plugin
+glightbox
+mkdocs-glightbox
