@@ -6,6 +6,8 @@ tags:
 ---
 # markdown
 
+[![markdownlint](https://github.com/shane0/cheatsheets/actions/workflows/markdownlint.yml/badge.svg)](https://github.com/shane0/cheatsheets/actions/workflows/markdownlint.yml)
+
 ## configuration file
 
 - `.markdownlint.json`
