@@ -21,3 +21,10 @@ alias showremote='echo "https://github.com/" $(head -1 <(git remote -v | cut -d 
 
 alias mks='mkdocs serve'
 ```
+
+- config file `.inputrc`
+
+```shell
+set editing-mode vi
+bind TAB:menu-complete
+```

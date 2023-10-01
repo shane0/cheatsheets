@@ -46,6 +46,26 @@ cli bujo m
 - mouse over this: PRAJNA
 - add more here: `includes/abbreviations.md`
 
+```shell
+pip install pymdown-extensions
+```
+
+```sh
+python3 -m venv venv
+source venv/bin/activate
+pip install mkdocs mkdocs-material
+mkdocs serve
+```
+
+```python
+pip show mkdocs-material
+pip install --upgrade mkdocs-material
+```
+
+```python
+pip install --upgrade mkdocs-material
+```
+
 ## github actions
 
 - this site is deployed using this command `mkdocs gh-deploy`

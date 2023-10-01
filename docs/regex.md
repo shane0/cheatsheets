@@ -1,10 +1,53 @@
 ---
 tags:
   - regex
+  - automation 
   - readability 
   - style guide 
 ---
 # regex
+
+- regex is an extremely powerful tool for editing text and automation
+- you can fix a problem with regex 
+- try it: <https://regex101.com/>
+
+## between around
+
+- find text with something before, in between or after
+
+```regex
+(?<=This is)(.*)(?=sentence)
+```
+
+- Groups & Lookaround
+
+```regex
+(abc) capture group
+\1 backreference to group #1
+(?:abc) non-capturing group
+(?=abc) positive lookahead
+(?!abc) negative lookahead
+```  
+
+## remove blank lines
+
+^(\s)*$\n
+
+## timestamps
+
+remove some timestamps from end of ticket summary
+
+```regex
+\ \d{1,}.*$
+```
+
+## validation
+
+email
+
+```
+"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"
+```
 
 ## past or future tense
 
@@ -209,3 +252,35 @@ This string has a trailing period
 ```
 
 This regular expression can be used in any programming language that supports regular expressions.
+
+## old examples
+
+### old micro app
+
+```powershell
+        $cleanoutput = $_.ToString() -replace 'System.Exception: ERROR: ', ""
+        $cleanoutput = $cleanoutput.Split(",")
+        $regname = [regex]"(?<=\[\\\\server\\path\\path\\\d{3}Matchme_)(.*?)(?=\\0)"
+        $cleanname = $regname.Match($cleanoutput)
+        write-host $cleanname
+        $html += "<br>"
+        $html += $cleanname
+        $regtranid = [regex]"(?<=The)(.*?)(?=has)"
+        $cleantran = $regtranid.Match($cleanoutput)
+        write-host $cleantran
+```
+
+### utilities
+
+searching for useful logging
+
+```powershell
+    $badlist | ForEach-Object {
+        Write-Host
+        $_ | select *
+        $_.name -replace '\\\\server\\', ''`
+            -replace 'c\$\\server\\Output\\', ''`
+            -replace 'serverOutput\d{3}\\', ''`
+            -replace '\\\d{3}_\d{14}\.out'
+    } | Get-Unique -OutVariable $fixed
+```

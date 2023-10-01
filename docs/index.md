@@ -7,8 +7,7 @@
 
 !!! info
 
-    - code snippets
-    - and microapps to supplement the workflow cookiecutter
-    - deployed using: [workflow cookiecutter](https://shane0.github.io/workflow/){ .md-button }
+    - cheats snippets and tiny automation tools to supplement this project template:
+    - [workflow cookiecutter](https://shane0.github.io/workflow/){ .md-button }
 
 [TAGS]

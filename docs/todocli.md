@@ -17,3 +17,5 @@ alias tprib='clear && find . -name "todo.txt" | xargs grep "(B"'
 alias tpric='clear && find . -name "todo.txt" | xargs grep "(C"'
 alias thelp='clear && ./todocli/todo.sh shorthelp'
 ```
+
+![f](images/todoformat.png)
