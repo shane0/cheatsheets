@@ -5,11 +5,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../fixtures/" rel="prev"/>
-<link href="../folders/" rel="next"/>
+<link href="../todocli/" rel="prev"/>
+<link href="../vim/" rel="next"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.6" name="generator"/>
-<title>flask - cheatsheets</title>
+<title>users - cheatsheets</title>
 <link href="../assets/stylesheets/main.558e4712.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -34,7 +34,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#flask">
+<a class="md-skip" href="#users">
           Skip to content
         </a>
 </div>
@@ -60,7 +60,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              flask
+              users
             
           </span>
 </div>
@@ -187,9 +187,8 @@
         fixtures
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../flask/">
         flask
       </a>
 </li>
@@ -288,8 +287,9 @@
         todo cli
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../users/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
         users
       </a>
 </li>
@@ -338,28 +338,33 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/shane0/cheatsheets/edit/main/docs/flask.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/shane0/cheatsheets/edit/main/docs/users.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
 </a>
-<a class="md-content__button md-icon" href="https://github.com/shane0/cheatsheets/raw/main/docs/flask.md" title="View source of this page">
+<a class="md-content__button md-icon" href="https://github.com/shane0/cheatsheets/raw/main/docs/users.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
-<h1 id="flask">flask<a class="headerlink" href="#flask" title="Permanent link">¶</a></h1>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>flask<span class="w"> </span>stuff
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nb">alias</span><span class="w"> </span><span class="nv">efl</span><span class="o">=</span><span class="s1">'export FLASK_ENV=development'</span>
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nb">alias</span><span class="w"> </span><span class="nv">eefl</span><span class="o">=</span><span class="s1">'echo $FLASK_ENV'</span>
-<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nb">alias</span><span class="w"> </span><span class="nv">fdm</span><span class="o">=</span><span class="s1">'flask db migrate'</span>
-<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nb">alias</span><span class="w"> </span><span class="nv">fdu</span><span class="o">=</span><span class="s1">'flask db upgrade'</span>
+<h1 id="users">users<a class="headerlink" href="#users" title="Permanent link">¶</a></h1>
+<p>see who is logged in</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>w
+</code></pre></div>
+<p>kill their session</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>pkill<span class="w"> </span>-KILL<span class="w"> </span>-u<span class="w"> </span>theirusername
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>/etc/group
+</code></pre></div>
+<p>change owner</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>chown<span class="w"> </span>-R<span class="w"> </span>username<span class="w"> </span>folder/
 </code></pre></div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 20, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 1, 2023</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 20, 2023</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 1, 2023</span>
 </small>
 </div>
 <script async="" crossorigin="anonymous" data-category="General" data-category-id="DIC_kwDOKV1JuM4CZeX2" data-emit-metadata="0" data-input-position="bottom" data-lang="en" data-mapping="pathname" data-reactions-enabled="1" data-repo="shane0/cheatsheets" data-repo-id="R_kgDOKV1JuA" data-strict="0" data-theme="noborder_dark" src="https://giscus.app/client.js">
@@ -370,7 +375,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: fixtures" class="md-footer__link md-footer__link--prev" href="../fixtures/" rel="prev">
+<a aria-label="Previous: todo cli" class="md-footer__link md-footer__link--prev" href="../todocli/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -379,17 +384,17 @@
 <span class="md-footer__direction">
                   Previous
                 </span>
-                fixtures
+                todo cli
               </div>
 </div>
 </a>
-<a aria-label="Next: folders" class="md-footer__link md-footer__link--next" href="../folders/" rel="next">
+<a aria-label="Next: vim" class="md-footer__link md-footer__link--next" href="../vim/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                   Next
                 </span>
-                folders
+                vim
               </div>
 </div>
 <div class="md-footer__button md-icon">
