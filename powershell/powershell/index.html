@@ -1,0 +1,953 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../js/js/" rel="prev"/>
+<link href="../../python/basics/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.6" name="generator"/>
+<title>never use powershell - cheatsheets</title>
+<link href="../../assets/stylesheets/main.558e4712.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#never-use-powershell">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<div data-md-component="outdated" hidden="">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="cheatsheets" class="md-header__button md-logo" data-md-component="logo" href="../.." title="cheatsheets">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            cheatsheets
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              never use powershell
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/shane0/cheatsheets" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="cheatsheets" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="cheatsheets">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    cheatsheets
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/shane0/cheatsheets" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Home
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../backups/">
+        backups
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../bash/">
+        bash
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../characters/">
+        strange characters
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../click/">
+        click
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cookiecutter/">
+        cookiecutter
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../css/">
+        css
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../find/">
+        Find
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../fixtures/">
+        fixtures
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../flask/">
+        flask
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../folders/">
+        folders
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../fzf/">
+        fuzzy finder
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../git/">
+        git
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../html/">
+        html
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../jobs/">
+        jobs
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../julian/">
+        julian dates
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../linux/">
+        linux
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../macos/">
+        mac os
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../markdown/">
+        markdown
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../mkdocs/">
+        mkdocs
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../mongo/">
+        mongo
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../pip/">
+        pip
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../postgres/">
+        postgres
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+        powershell
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../python/">
+        python
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../react/">
+        react
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../regex/">
+        regex
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../scraping/">
+        scraping content
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../todocli/">
+        todo cli
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../users/">
+        users
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../vim/">
+        vim
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_32" id="__nav_32" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_32" tabindex="0">
+          Bujo
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Bujo" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_32">
+<span class="md-nav__icon md-icon"></span>
+          Bujo
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../bujo/2023/">
+        2023
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../bujo/bujo/">
+        bullet journaling
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_33" id="__nav_33" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_33" tabindex="0">
+          Django
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Django" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_33">
+<span class="md-nav__icon md-icon"></span>
+          Django
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../django/django/">
+        django
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../django/flask/">
+        flask
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../django/folders_files/">
+        folders and files
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../django/home/">
+        home page app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../django/home_fancy/">
+        home page app fancy version
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../django/upload/">
+        upload a file
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_34" id="__nav_34" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_34" tabindex="0">
+          Js
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Js" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_34">
+<span class="md-nav__icon md-icon"></span>
+          Js
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../js/introspect/">
+        introspection
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../js/js/">
+        js
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_35" id="__nav_35" type="checkbox"/>
+<label aria-expanded="true" class="md-nav__link" for="__nav_35" tabindex="0">
+          Powershell
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Powershell" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_35">
+<span class="md-nav__icon md-icon"></span>
+          Powershell
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
+        never use powershell
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_36" id="__nav_36" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_36" tabindex="0">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Python" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_36">
+<span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../python/basics/">
+        basics
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/shane0/cheatsheets/edit/main/docs/powershell/powershell.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://github.com/shane0/cheatsheets/raw/main/docs/powershell/powershell.md" title="View source of this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
+</a>
+<h1 id="never-use-powershell">never use powershell<a class="headerlink" href="#never-use-powershell" title="Permanent link">¶</a></h1>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">@</span><span class="c1">REM Tokenize current date.</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">@</span><span class="k">for</span> <span class="k">/f</span> <span class="s2">"tokens=1,2,3,4 delims=/ "</span> <span class="se">%%</span>a <span class="k">in</span> <span class="p">(</span> <span class="s1">'date/t'</span> <span class="p">)</span> <span class="k">do</span> <span class="p">@</span><span class="k">set</span> <span class="nv">x</span><span class="p">=</span><span class="se">%%</span>d
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="p">@</span><span class="k">for</span> <span class="k">/f</span> <span class="s2">"tokens=1,2,3,4 delims=/ "</span> <span class="se">%%</span>a <span class="k">in</span> <span class="p">(</span> <span class="s1">'date/t'</span> <span class="p">)</span> <span class="k">do</span> <span class="p">@</span><span class="k">set</span> <span class="nv">m</span><span class="p">=</span><span class="se">%%</span>b
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="p">@</span><span class="k">for</span> <span class="k">/f</span> <span class="s2">"tokens=1,2,3,4 delims=/ "</span> <span class="se">%%</span>a <span class="k">in</span> <span class="p">(</span> <span class="s1">'date/t'</span> <span class="p">)</span> <span class="k">do</span> <span class="p">@</span><span class="k">set</span> <span class="nv">d</span><span class="p">=</span><span class="se">%%</span>c
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="p">@</span><span class="c1">REM run today if no date passed</span>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="p">@</span><span class="k">if</span> <span class="s2">"</span><span class="nv">%3</span><span class="s2">"</span><span class="o">==</span><span class="s2">""</span> <span class="p">(</span>
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a> <span class="p">@</span><span class="k">set</span> <span class="nv">yyyymmdd</span><span class="p">=</span><span class="nv">%x%%m%%d%</span>
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="p">)</span> <span class="k">else</span> <span class="p">(</span>
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a> <span class="p">@</span><span class="k">set</span> <span class="nv">yyyymmdd</span><span class="p">=</span><span class="nv">%3</span>
+<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="p">)</span>
+<a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>
+<a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="p">@</span><span class="k">ECHO</span> Running <span class="nv">%0</span>
+<a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="p">@</span><span class="c1">REM @ECHO For %YYYYMMDD%</span>
+<a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a>
+<a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="p">@</span><span class="k">SET</span> <span class="nv">project</span><span class="p">=</span><span class="nv">%1</span>
+<a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="p">@</span><span class="k">SET</span> <span class="nv">action</span><span class="p">=</span><span class="nv">%2</span>
+<a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a>
+<a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="p">@</span><span class="k">call</span> <span class="nv">%~dp0</span>\config.bat
+<a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="p">@</span><span class="k">ECHO</span> calling <span class="nv">%scriptpath%</span> <span class="nv">%project%</span> <span class="nv">%action%</span> <span class="nv">%csvpath%</span>
+<a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="p">@</span>powershell -NoProfile -ExecutionPolicy Bypass <span class="nv">%scriptpath%</span> <span class="nv">%csvpath%</span> <span class="nv">%project%</span> <span class="nv">%action%</span> 
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">param</span><span class="p">(</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>  <span class="nv">$csvconfig</span><span class="p">,</span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>  <span class="nv">$project</span><span class="p">,</span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>  <span class="nv">$action</span>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="p">)</span>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a>
+<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="k">function</span> <span class="nb">Get-ScriptFull</span>
+<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="p">{</span>
+<a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a>    <span class="nb">Split-Path</span> <span class="nv">$script:MyInvocation</span><span class="p">.</span><span class="n">MyCommand</span><span class="p">.</span><span class="n">Definition</span>
+<a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a>    <span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">ScriptName</span><span class="p">.</span><span class="n">Replace</span><span class="p">((</span><span class="nb">Split-Path</span> <span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">ScriptName</span><span class="p">),</span><span class="s1">''</span><span class="p">).</span><span class="n">TrimStart</span><span class="p">(</span><span class="s1">''</span><span class="p">)</span>
+<a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="p">}</span>
+<a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="nv">$scriptrunning</span> <span class="p">=</span> <span class="nb">Get-ScriptFull</span>
+<a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="nb">write-host</span> <span class="s2">"running $scriptrunning"</span>
+<a href="#__codelineno-1-15" id="__codelineno-1-15" name="__codelineno-1-15"></a>
+<a href="#__codelineno-1-16" id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="c"># path to your config</span>
+<a href="#__codelineno-1-17" id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="c"># $csvconfig = 'clone.csv'</span>
+<a href="#__codelineno-1-18" id="__codelineno-1-18" name="__codelineno-1-18"></a>
+<a href="#__codelineno-1-19" id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="nv">$csvdata</span> <span class="p">=</span> <span class="nb">Import-Csv</span> <span class="nv">$csvconfig</span>
+<a href="#__codelineno-1-20" id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="nv">$isodate</span> <span class="p">=</span> <span class="nb">get-date</span> <span class="n">-Format</span> <span class="n">yyyy-MM-dd</span>
+<a href="#__codelineno-1-21" id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="nv">$yymmdd</span> <span class="p">=</span> <span class="nb">get-date</span> <span class="n">-Format</span> <span class="n">yyMMdd</span>
+<a href="#__codelineno-1-22" id="__codelineno-1-22" name="__codelineno-1-22"></a>
+<a href="#__codelineno-1-23" id="__codelineno-1-23" name="__codelineno-1-23"></a>    <span class="c"># custom wildcards use yymmdd for today 170504</span>
+<a href="#__codelineno-1-24" id="__codelineno-1-24" name="__codelineno-1-24"></a>    <span class="k">function</span> <span class="nb">update-set</span><span class="p">(</span><span class="nv">$csvdata</span><span class="p">){</span>
+<a href="#__codelineno-1-25" id="__codelineno-1-25" name="__codelineno-1-25"></a>        <span class="k">foreach</span><span class="p">(</span><span class="nv">$_</span> <span class="k">in</span> <span class="nv">$csvdata</span><span class="p">){</span>
+<a href="#__codelineno-1-26" id="__codelineno-1-26" name="__codelineno-1-26"></a>            <span class="nv">$_</span><span class="p">.</span><span class="n">path</span> <span class="p">=</span> <span class="nv">$_</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">Replace</span><span class="p">(</span><span class="s1">'yymmdd'</span><span class="p">,</span><span class="nv">$yymmdd</span><span class="p">)</span> 
+<a href="#__codelineno-1-27" id="__codelineno-1-27" name="__codelineno-1-27"></a>            <span class="nv">$_</span><span class="p">.</span><span class="n">destination</span> <span class="p">=</span> <span class="nv">$_</span><span class="p">.</span><span class="n">destination</span><span class="p">.</span><span class="n">Replace</span><span class="p">(</span><span class="s1">'yymmdd'</span><span class="p">,</span><span class="nv">$yymmdd</span><span class="p">)</span> 
+<a href="#__codelineno-1-28" id="__codelineno-1-28" name="__codelineno-1-28"></a>            <span class="nv">$_</span><span class="p">.</span><span class="n">path</span> <span class="p">=</span> <span class="nv">$_</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">Replace</span><span class="p">(</span><span class="s1">'yyyy-MM-dd'</span><span class="p">,</span><span class="nv">$isodate</span><span class="p">)</span>
+<a href="#__codelineno-1-29" id="__codelineno-1-29" name="__codelineno-1-29"></a>            <span class="nv">$_</span><span class="p">.</span><span class="n">destination</span> <span class="p">=</span> <span class="nv">$_</span><span class="p">.</span><span class="n">destination</span><span class="p">.</span><span class="n">Replace</span><span class="p">(</span><span class="s1">'yyyy-MM-dd'</span><span class="p">,</span><span class="nv">$isodate</span><span class="p">)</span> 
+<a href="#__codelineno-1-30" id="__codelineno-1-30" name="__codelineno-1-30"></a>            <span class="nv">$_</span><span class="p">.</span><span class="n">path</span> <span class="p">=</span> <span class="nv">$_</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">Replace</span><span class="p">(</span><span class="s1">'yesterday'</span><span class="p">,</span><span class="nv">$yesterday</span><span class="p">)</span>
+<a href="#__codelineno-1-31" id="__codelineno-1-31" name="__codelineno-1-31"></a>            <span class="nv">$_</span><span class="p">.</span><span class="n">destination</span> <span class="p">=</span> <span class="nv">$_</span><span class="p">.</span><span class="n">destination</span><span class="p">.</span><span class="n">Replace</span><span class="p">(</span><span class="s1">'yesterday'</span><span class="p">,</span><span class="nv">$yesterday</span><span class="p">)</span> 
+<a href="#__codelineno-1-32" id="__codelineno-1-32" name="__codelineno-1-32"></a>        <span class="p">}</span>
+<a href="#__codelineno-1-33" id="__codelineno-1-33" name="__codelineno-1-33"></a>        <span class="k">return</span> <span class="nv">$csvdata</span>
+<a href="#__codelineno-1-34" id="__codelineno-1-34" name="__codelineno-1-34"></a>    <span class="p">}</span>
+<a href="#__codelineno-1-35" id="__codelineno-1-35" name="__codelineno-1-35"></a>    <span class="nb">update-set</span><span class="p">(</span><span class="nv">$csvdata</span><span class="p">)</span> <span class="p">-</span><span class="n">-quiet</span> <span class="p">-</span><span class="n">-no-verbose</span> <span class="p">|</span> <span class="nb">out-null</span>
+<a href="#__codelineno-1-36" id="__codelineno-1-36" name="__codelineno-1-36"></a>
+<a href="#__codelineno-1-37" id="__codelineno-1-37" name="__codelineno-1-37"></a>    <span class="c"># logging</span>
+<a href="#__codelineno-1-38" id="__codelineno-1-38" name="__codelineno-1-38"></a>    <span class="k">function</span> <span class="nb">Get-ScriptDirectory</span>
+<a href="#__codelineno-1-39" id="__codelineno-1-39" name="__codelineno-1-39"></a>    <span class="p">{</span>
+<a href="#__codelineno-1-40" id="__codelineno-1-40" name="__codelineno-1-40"></a>        <span class="nb">Split-Path</span> <span class="nv">$script:MyInvocation</span><span class="p">.</span><span class="n">MyCommand</span><span class="p">.</span><span class="n">Definition</span>
+<a href="#__codelineno-1-41" id="__codelineno-1-41" name="__codelineno-1-41"></a>    <span class="p">}</span>
+<a href="#__codelineno-1-42" id="__codelineno-1-42" name="__codelineno-1-42"></a>    <span class="nv">$mypath</span> <span class="p">=</span> <span class="nb">Get-ScriptDirectory</span>
+<a href="#__codelineno-1-43" id="__codelineno-1-43" name="__codelineno-1-43"></a>    <span class="nb">write-host</span> <span class="s2">"running $mypath using $csvconfig"</span>
+<a href="#__codelineno-1-44" id="__codelineno-1-44" name="__codelineno-1-44"></a>
+<a href="#__codelineno-1-45" id="__codelineno-1-45" name="__codelineno-1-45"></a><span class="c"># ftp get and put</span>
+<a href="#__codelineno-1-46" id="__codelineno-1-46" name="__codelineno-1-46"></a><span class="k">function</span> <span class="n">gettask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-47" id="__codelineno-1-47" name="__codelineno-1-47"></a>    <span class="nb">Set-Location</span> <span class="n">C</span><span class="p">:\</span><span class="n">winscp</span>
+<a href="#__codelineno-1-48" id="__codelineno-1-48" name="__codelineno-1-48"></a>    <span class="nb">Add-Type</span> <span class="n">-Path</span> <span class="s2">"WinSCPnet.dll"</span>
+<a href="#__codelineno-1-49" id="__codelineno-1-49" name="__codelineno-1-49"></a>      <span class="c"># Set up session options</span>
+<a href="#__codelineno-1-50" id="__codelineno-1-50" name="__codelineno-1-50"></a>      <span class="nv">$sessionOptions</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">WinSCP</span><span class="p">.</span><span class="n">SessionOptions</span> <span class="n">-Property</span> <span class="p">@{</span>
+<a href="#__codelineno-1-51" id="__codelineno-1-51" name="__codelineno-1-51"></a>          <span class="n">Protocol</span> <span class="p">=</span> <span class="no">[WinSCP.Protocol]</span><span class="p">::</span><span class="n">Sftp</span>
+<a href="#__codelineno-1-52" id="__codelineno-1-52" name="__codelineno-1-52"></a>          <span class="n">HostName</span> <span class="p">=</span> <span class="s2">"sftp.your.com"</span>
+<a href="#__codelineno-1-53" id="__codelineno-1-53" name="__codelineno-1-53"></a>          <span class="n">UserName</span> <span class="p">=</span> <span class="s2">"something"</span>
+<a href="#__codelineno-1-54" id="__codelineno-1-54" name="__codelineno-1-54"></a>          <span class="n">Password</span> <span class="p">=</span> <span class="s2">"secrets"</span>
+<a href="#__codelineno-1-55" id="__codelineno-1-55" name="__codelineno-1-55"></a>          <span class="n">SshHostKeyFingerprint</span> <span class="p">=</span> <span class="s2">"ssh-rsa 2048 e2:...:8a"</span>
+<a href="#__codelineno-1-56" id="__codelineno-1-56" name="__codelineno-1-56"></a>      <span class="p">}</span>
+<a href="#__codelineno-1-57" id="__codelineno-1-57" name="__codelineno-1-57"></a>    <span class="nv">$session</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">WinSCP</span><span class="p">.</span><span class="n">Session</span>
+<a href="#__codelineno-1-58" id="__codelineno-1-58" name="__codelineno-1-58"></a>    <span class="k">try</span>
+<a href="#__codelineno-1-59" id="__codelineno-1-59" name="__codelineno-1-59"></a>        <span class="p">{</span>
+<a href="#__codelineno-1-60" id="__codelineno-1-60" name="__codelineno-1-60"></a>            <span class="c"># Connect</span>
+<a href="#__codelineno-1-61" id="__codelineno-1-61" name="__codelineno-1-61"></a>            <span class="nv">$session</span><span class="p">.</span><span class="n">Open</span><span class="p">(</span><span class="nv">$sessionOptions</span><span class="p">)</span>
+<a href="#__codelineno-1-62" id="__codelineno-1-62" name="__codelineno-1-62"></a>            <span class="c"># Upload files</span>
+<a href="#__codelineno-1-63" id="__codelineno-1-63" name="__codelineno-1-63"></a>            <span class="nv">$transferOptions</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">WinSCP</span><span class="p">.</span><span class="n">TransferOptions</span>
+<a href="#__codelineno-1-64" id="__codelineno-1-64" name="__codelineno-1-64"></a>            <span class="nv">$transferOptions</span><span class="p">.</span><span class="n">TransferMode</span> <span class="p">=</span> <span class="no">[WinSCP.TransferMode]</span><span class="p">::</span><span class="n">Binary</span>
+<a href="#__codelineno-1-65" id="__codelineno-1-65" name="__codelineno-1-65"></a>            <span class="nv">$transferResult</span> <span class="p">=</span> <span class="nv">$session</span><span class="p">.</span><span class="n">GetFiles</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="n">destination</span><span class="p">,</span> <span class="nv">$task</span><span class="p">.</span><span class="n">path</span><span class="p">,</span>  <span class="nv">$False</span><span class="p">,</span> <span class="nv">$transferOptions</span><span class="p">)</span>
+<a href="#__codelineno-1-66" id="__codelineno-1-66" name="__codelineno-1-66"></a>            <span class="c"># Throw on any error</span>
+<a href="#__codelineno-1-67" id="__codelineno-1-67" name="__codelineno-1-67"></a>            <span class="nv">$transferResult</span><span class="p">.</span><span class="n">Check</span><span class="p">()</span>
+<a href="#__codelineno-1-68" id="__codelineno-1-68" name="__codelineno-1-68"></a>            <span class="c"># Print results</span>
+<a href="#__codelineno-1-69" id="__codelineno-1-69" name="__codelineno-1-69"></a>            <span class="k">foreach</span> <span class="p">(</span><span class="nv">$transfer</span> <span class="k">in</span> <span class="nv">$transferResult</span><span class="p">.</span><span class="n">Transfers</span><span class="p">)</span>
+<a href="#__codelineno-1-70" id="__codelineno-1-70" name="__codelineno-1-70"></a>            <span class="p">{</span>
+<a href="#__codelineno-1-71" id="__codelineno-1-71" name="__codelineno-1-71"></a>            <span class="nb">Write-Host</span> <span class="p">(</span><span class="s2">"Download of {0} succeeded"</span> <span class="o">-f</span> <span class="nv">$transfer</span><span class="p">.</span><span class="n">FileName</span><span class="p">)</span>
+<a href="#__codelineno-1-72" id="__codelineno-1-72" name="__codelineno-1-72"></a>            <span class="p">}</span>
+<a href="#__codelineno-1-73" id="__codelineno-1-73" name="__codelineno-1-73"></a>        <span class="p">}</span>
+<a href="#__codelineno-1-74" id="__codelineno-1-74" name="__codelineno-1-74"></a>    <span class="k">finally</span>
+<a href="#__codelineno-1-75" id="__codelineno-1-75" name="__codelineno-1-75"></a>    <span class="p">{</span>
+<a href="#__codelineno-1-76" id="__codelineno-1-76" name="__codelineno-1-76"></a>        <span class="nv">$session</span><span class="p">.</span><span class="n">Dispose</span><span class="p">()</span>
+<a href="#__codelineno-1-77" id="__codelineno-1-77" name="__codelineno-1-77"></a>    <span class="p">}</span>
+<a href="#__codelineno-1-78" id="__codelineno-1-78" name="__codelineno-1-78"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-79" id="__codelineno-1-79" name="__codelineno-1-79"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-80" id="__codelineno-1-80" name="__codelineno-1-80"></a>        <span class="p">}</span>   
+<a href="#__codelineno-1-81" id="__codelineno-1-81" name="__codelineno-1-81"></a><span class="p">}</span> <span class="c"># end gettask</span>
+<a href="#__codelineno-1-82" id="__codelineno-1-82" name="__codelineno-1-82"></a>
+<a href="#__codelineno-1-83" id="__codelineno-1-83" name="__codelineno-1-83"></a>
+<a href="#__codelineno-1-84" id="__codelineno-1-84" name="__codelineno-1-84"></a><span class="c"># put</span>
+<a href="#__codelineno-1-85" id="__codelineno-1-85" name="__codelineno-1-85"></a><span class="k">function</span> <span class="n">puttask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-86" id="__codelineno-1-86" name="__codelineno-1-86"></a>    <span class="nb">Set-Location</span> <span class="n">C</span><span class="p">:\</span><span class="n">winscp</span>
+<a href="#__codelineno-1-87" id="__codelineno-1-87" name="__codelineno-1-87"></a>    <span class="nb">Add-Type</span> <span class="n">-Path</span> <span class="s2">"WinSCPnet.dll"</span>
+<a href="#__codelineno-1-88" id="__codelineno-1-88" name="__codelineno-1-88"></a>        <span class="c"># Set up session options</span>
+<a href="#__codelineno-1-89" id="__codelineno-1-89" name="__codelineno-1-89"></a>        <span class="nv">$sessionOptions</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">WinSCP</span><span class="p">.</span><span class="n">SessionOptions</span> <span class="n">-Property</span> <span class="p">@{</span>
+<a href="#__codelineno-1-90" id="__codelineno-1-90" name="__codelineno-1-90"></a>            <span class="n">Protocol</span> <span class="p">=</span> <span class="no">[WinSCP.Protocol]</span><span class="p">::</span><span class="n">Sftp</span>
+<a href="#__codelineno-1-91" id="__codelineno-1-91" name="__codelineno-1-91"></a>            <span class="n">HostName</span> <span class="p">=</span> <span class="s2">"sftp.some.com"</span>
+<a href="#__codelineno-1-92" id="__codelineno-1-92" name="__codelineno-1-92"></a>            <span class="n">UserName</span> <span class="p">=</span> <span class="s2">"someuser"</span>
+<a href="#__codelineno-1-93" id="__codelineno-1-93" name="__codelineno-1-93"></a>            <span class="n">Password</span> <span class="p">=</span> <span class="s2">"pwdsecretomg"</span>
+<a href="#__codelineno-1-94" id="__codelineno-1-94" name="__codelineno-1-94"></a>            <span class="n">SshHostKeyFingerprint</span> <span class="p">=</span> <span class="s2">"ssh-rsa 2048 0d:...8a"</span>
+<a href="#__codelineno-1-95" id="__codelineno-1-95" name="__codelineno-1-95"></a>        <span class="p">}</span>
+<a href="#__codelineno-1-96" id="__codelineno-1-96" name="__codelineno-1-96"></a>    <span class="nv">$session</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">WinSCP</span><span class="p">.</span><span class="n">Session</span>
+<a href="#__codelineno-1-97" id="__codelineno-1-97" name="__codelineno-1-97"></a>
+<a href="#__codelineno-1-98" id="__codelineno-1-98" name="__codelineno-1-98"></a>    <span class="k">try</span>
+<a href="#__codelineno-1-99" id="__codelineno-1-99" name="__codelineno-1-99"></a>        <span class="p">{</span>
+<a href="#__codelineno-1-100" id="__codelineno-1-100" name="__codelineno-1-100"></a>            <span class="c"># Connect</span>
+<a href="#__codelineno-1-101" id="__codelineno-1-101" name="__codelineno-1-101"></a>            <span class="nv">$session</span><span class="p">.</span><span class="n">Open</span><span class="p">(</span><span class="nv">$sessionOptions</span><span class="p">)</span>
+<a href="#__codelineno-1-102" id="__codelineno-1-102" name="__codelineno-1-102"></a>                <span class="c"># Upload files</span>
+<a href="#__codelineno-1-103" id="__codelineno-1-103" name="__codelineno-1-103"></a>                <span class="nv">$transferOptions</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">WinSCP</span><span class="p">.</span><span class="n">TransferOptions</span>
+<a href="#__codelineno-1-104" id="__codelineno-1-104" name="__codelineno-1-104"></a>                <span class="nv">$transferOptions</span><span class="p">.</span><span class="n">TransferMode</span> <span class="p">=</span> <span class="no">[WinSCP.TransferMode]</span><span class="p">::</span><span class="n">Binary</span>
+<a href="#__codelineno-1-105" id="__codelineno-1-105" name="__codelineno-1-105"></a>                <span class="nv">$transferResult</span> <span class="p">=</span> <span class="nv">$session</span><span class="p">.</span><span class="n">PutFiles</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="n">path</span><span class="p">,</span> <span class="nv">$task</span><span class="p">.</span><span class="n">destination</span><span class="p">)</span>
+<a href="#__codelineno-1-106" id="__codelineno-1-106" name="__codelineno-1-106"></a>                <span class="c"># Throw on any error</span>
+<a href="#__codelineno-1-107" id="__codelineno-1-107" name="__codelineno-1-107"></a>                <span class="nv">$transferResult</span><span class="p">.</span><span class="n">Check</span><span class="p">()</span>
+<a href="#__codelineno-1-108" id="__codelineno-1-108" name="__codelineno-1-108"></a>                <span class="c"># Print results</span>
+<a href="#__codelineno-1-109" id="__codelineno-1-109" name="__codelineno-1-109"></a>                <span class="k">foreach</span> <span class="p">(</span><span class="nv">$transfer</span> <span class="k">in</span> <span class="nv">$transferResult</span><span class="p">.</span><span class="n">Transfers</span><span class="p">)</span>
+<a href="#__codelineno-1-110" id="__codelineno-1-110" name="__codelineno-1-110"></a>                <span class="p">{</span>
+<a href="#__codelineno-1-111" id="__codelineno-1-111" name="__codelineno-1-111"></a>                    <span class="nb">Write-Host</span> <span class="p">(</span><span class="s2">"Upload of {0} succeeded"</span> <span class="o">-f</span> <span class="nv">$transfer</span><span class="p">.</span><span class="n">FileName</span><span class="p">)</span>
+<a href="#__codelineno-1-112" id="__codelineno-1-112" name="__codelineno-1-112"></a>                <span class="p">}</span>
+<a href="#__codelineno-1-113" id="__codelineno-1-113" name="__codelineno-1-113"></a>        <span class="p">}</span>
+<a href="#__codelineno-1-114" id="__codelineno-1-114" name="__codelineno-1-114"></a>    <span class="k">finally</span>
+<a href="#__codelineno-1-115" id="__codelineno-1-115" name="__codelineno-1-115"></a>    <span class="p">{</span>
+<a href="#__codelineno-1-116" id="__codelineno-1-116" name="__codelineno-1-116"></a>        <span class="nv">$session</span><span class="p">.</span><span class="n">Dispose</span><span class="p">()</span>
+<a href="#__codelineno-1-117" id="__codelineno-1-117" name="__codelineno-1-117"></a>    <span class="p">}</span>
+<a href="#__codelineno-1-118" id="__codelineno-1-118" name="__codelineno-1-118"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-119" id="__codelineno-1-119" name="__codelineno-1-119"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-120" id="__codelineno-1-120" name="__codelineno-1-120"></a>        <span class="p">}</span>  
+<a href="#__codelineno-1-121" id="__codelineno-1-121" name="__codelineno-1-121"></a><span class="p">}</span> <span class="c"># end puttask</span>
+<a href="#__codelineno-1-122" id="__codelineno-1-122" name="__codelineno-1-122"></a>
+<a href="#__codelineno-1-123" id="__codelineno-1-123" name="__codelineno-1-123"></a>
+<a href="#__codelineno-1-124" id="__codelineno-1-124" name="__codelineno-1-124"></a><span class="k">function</span> <span class="n">movetask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-125" id="__codelineno-1-125" name="__codelineno-1-125"></a>          <span class="nb">move-item</span> <span class="nv">$task</span><span class="p">.</span><span class="n">path</span> <span class="nv">$task</span><span class="p">.</span><span class="n">destination</span> <span class="n">-Force</span>
+<a href="#__codelineno-1-126" id="__codelineno-1-126" name="__codelineno-1-126"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-127" id="__codelineno-1-127" name="__codelineno-1-127"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-128" id="__codelineno-1-128" name="__codelineno-1-128"></a>        <span class="p">}</span>
+<a href="#__codelineno-1-129" id="__codelineno-1-129" name="__codelineno-1-129"></a><span class="p">}</span>
+<a href="#__codelineno-1-130" id="__codelineno-1-130" name="__codelineno-1-130"></a>
+<a href="#__codelineno-1-131" id="__codelineno-1-131" name="__codelineno-1-131"></a><span class="k">function</span> <span class="n">copytask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-132" id="__codelineno-1-132" name="__codelineno-1-132"></a>          <span class="nb">copy-item</span> <span class="nv">$task</span><span class="p">.</span><span class="n">path</span> <span class="nv">$task</span><span class="p">.</span><span class="n">destination</span> <span class="n">-Force</span>
+<a href="#__codelineno-1-133" id="__codelineno-1-133" name="__codelineno-1-133"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-134" id="__codelineno-1-134" name="__codelineno-1-134"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-135" id="__codelineno-1-135" name="__codelineno-1-135"></a>        <span class="p">}</span>
+<a href="#__codelineno-1-136" id="__codelineno-1-136" name="__codelineno-1-136"></a><span class="p">}</span>
+<a href="#__codelineno-1-137" id="__codelineno-1-137" name="__codelineno-1-137"></a>
+<a href="#__codelineno-1-138" id="__codelineno-1-138" name="__codelineno-1-138"></a><span class="k">function</span> <span class="n">renametask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-139" id="__codelineno-1-139" name="__codelineno-1-139"></a>          <span class="nb">rename-item</span> <span class="n">-path</span> <span class="nv">$task</span><span class="p">.</span><span class="n">path</span> <span class="n">-newname</span> <span class="nv">$task</span><span class="p">.</span><span class="n">destination</span> <span class="n">-Force</span>
+<a href="#__codelineno-1-140" id="__codelineno-1-140" name="__codelineno-1-140"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-141" id="__codelineno-1-141" name="__codelineno-1-141"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-142" id="__codelineno-1-142" name="__codelineno-1-142"></a>        <span class="p">}</span>
+<a href="#__codelineno-1-143" id="__codelineno-1-143" name="__codelineno-1-143"></a><span class="p">}</span>
+<a href="#__codelineno-1-144" id="__codelineno-1-144" name="__codelineno-1-144"></a>
+<a href="#__codelineno-1-145" id="__codelineno-1-145" name="__codelineno-1-145"></a><span class="k">function</span> <span class="n">newtask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-146" id="__codelineno-1-146" name="__codelineno-1-146"></a>        <span class="k">if</span><span class="p">(</span><span class="o">-not</span> <span class="p">(</span><span class="nb">test-path</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="n">path</span><span class="p">))){</span>
+<a href="#__codelineno-1-147" id="__codelineno-1-147" name="__codelineno-1-147"></a>            <span class="nb">new-item</span> <span class="n">-path</span> <span class="nv">$task</span><span class="p">.</span><span class="n">path</span> <span class="n">-ItemType</span> <span class="nv">$task</span><span class="p">.</span><span class="nb">type </span>
+<a href="#__codelineno-1-148" id="__codelineno-1-148" name="__codelineno-1-148"></a>        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span><span class="nb">write-host</span> <span class="s2">"</span><span class="p">$(</span><span class="nv">$task</span><span class="p">.</span><span class="n">path</span><span class="p">)</span><span class="s2"> already exists"</span><span class="p">}</span>
+<a href="#__codelineno-1-149" id="__codelineno-1-149" name="__codelineno-1-149"></a>        <span class="c"># add test with email alert option to destination if this fails?</span>
+<a href="#__codelineno-1-150" id="__codelineno-1-150" name="__codelineno-1-150"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-151" id="__codelineno-1-151" name="__codelineno-1-151"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-152" id="__codelineno-1-152" name="__codelineno-1-152"></a>        <span class="p">}</span>
+<a href="#__codelineno-1-153" id="__codelineno-1-153" name="__codelineno-1-153"></a><span class="p">}</span>
+<a href="#__codelineno-1-154" id="__codelineno-1-154" name="__codelineno-1-154"></a>
+<a href="#__codelineno-1-155" id="__codelineno-1-155" name="__codelineno-1-155"></a><span class="k">function</span> <span class="n">removetask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-156" id="__codelineno-1-156" name="__codelineno-1-156"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="nb">type </span><span class="p">=</span> <span class="s1">'recursive'</span><span class="p">){</span>
+<a href="#__codelineno-1-157" id="__codelineno-1-157" name="__codelineno-1-157"></a>         <span class="nb">remove-item</span> <span class="n">-path</span> <span class="nv">$task</span><span class="p">.</span><span class="n">path</span> <span class="n">-Recurse</span>
+<a href="#__codelineno-1-158" id="__codelineno-1-158" name="__codelineno-1-158"></a>        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<a href="#__codelineno-1-159" id="__codelineno-1-159" name="__codelineno-1-159"></a>          <span class="nb">remove-item</span> <span class="n">-path</span> <span class="nv">$task</span><span class="p">.</span><span class="n">path</span>
+<a href="#__codelineno-1-160" id="__codelineno-1-160" name="__codelineno-1-160"></a>        <span class="p">}</span>
+<a href="#__codelineno-1-161" id="__codelineno-1-161" name="__codelineno-1-161"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-162" id="__codelineno-1-162" name="__codelineno-1-162"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-163" id="__codelineno-1-163" name="__codelineno-1-163"></a>        <span class="p">}</span>      
+<a href="#__codelineno-1-164" id="__codelineno-1-164" name="__codelineno-1-164"></a><span class="p">}</span>
+<a href="#__codelineno-1-165" id="__codelineno-1-165" name="__codelineno-1-165"></a>
+<a href="#__codelineno-1-166" id="__codelineno-1-166" name="__codelineno-1-166"></a><span class="k">function</span> <span class="n">invoketask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-167" id="__codelineno-1-167" name="__codelineno-1-167"></a>          <span class="nb">invoke-item</span> <span class="n">-path</span> <span class="nv">$task</span><span class="p">.</span><span class="n">path</span>
+<a href="#__codelineno-1-168" id="__codelineno-1-168" name="__codelineno-1-168"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-169" id="__codelineno-1-169" name="__codelineno-1-169"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-170" id="__codelineno-1-170" name="__codelineno-1-170"></a>        <span class="p">}</span>            
+<a href="#__codelineno-1-171" id="__codelineno-1-171" name="__codelineno-1-171"></a><span class="p">}</span>
+<a href="#__codelineno-1-172" id="__codelineno-1-172" name="__codelineno-1-172"></a>
+<a href="#__codelineno-1-173" id="__codelineno-1-173" name="__codelineno-1-173"></a><span class="k">function</span> <span class="n">cleartask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-174" id="__codelineno-1-174" name="__codelineno-1-174"></a>          <span class="nb">clear-content</span> <span class="nv">$task</span><span class="p">.</span><span class="n">path</span>
+<a href="#__codelineno-1-175" id="__codelineno-1-175" name="__codelineno-1-175"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-176" id="__codelineno-1-176" name="__codelineno-1-176"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-177" id="__codelineno-1-177" name="__codelineno-1-177"></a>        <span class="p">}</span>
+<a href="#__codelineno-1-178" id="__codelineno-1-178" name="__codelineno-1-178"></a><span class="p">}</span>
+<a href="#__codelineno-1-179" id="__codelineno-1-179" name="__codelineno-1-179"></a><span class="k">function</span> <span class="n">addtask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-180" id="__codelineno-1-180" name="__codelineno-1-180"></a>          <span class="nv">$task</span><span class="p">.</span><span class="n">destination</span> <span class="p">|</span> <span class="nb">add-content</span> <span class="nv">$task</span><span class="p">.</span><span class="n">path</span>
+<a href="#__codelineno-1-181" id="__codelineno-1-181" name="__codelineno-1-181"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-182" id="__codelineno-1-182" name="__codelineno-1-182"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-183" id="__codelineno-1-183" name="__codelineno-1-183"></a>        <span class="p">}</span>
+<a href="#__codelineno-1-184" id="__codelineno-1-184" name="__codelineno-1-184"></a><span class="p">}</span>
+<a href="#__codelineno-1-185" id="__codelineno-1-185" name="__codelineno-1-185"></a><span class="k">function</span> <span class="n">cmdtask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-186" id="__codelineno-1-186" name="__codelineno-1-186"></a>     <span class="p">&amp;</span> <span class="nv">$task</span><span class="p">.</span><span class="n">path</span>
+<a href="#__codelineno-1-187" id="__codelineno-1-187" name="__codelineno-1-187"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-188" id="__codelineno-1-188" name="__codelineno-1-188"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-189" id="__codelineno-1-189" name="__codelineno-1-189"></a>        <span class="p">}</span>
+<a href="#__codelineno-1-190" id="__codelineno-1-190" name="__codelineno-1-190"></a><span class="p">}</span>
+<a href="#__codelineno-1-191" id="__codelineno-1-191" name="__codelineno-1-191"></a><span class="k">function</span> <span class="n">urltask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-192" id="__codelineno-1-192" name="__codelineno-1-192"></a>          <span class="nb">Start-Process</span> <span class="s2">"chrome.exe"</span> <span class="nv">$task</span><span class="p">.</span><span class="n">path</span>
+<a href="#__codelineno-1-193" id="__codelineno-1-193" name="__codelineno-1-193"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-194" id="__codelineno-1-194" name="__codelineno-1-194"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-195" id="__codelineno-1-195" name="__codelineno-1-195"></a>        <span class="p">}</span>  
+<a href="#__codelineno-1-196" id="__codelineno-1-196" name="__codelineno-1-196"></a><span class="p">}</span>
+<a href="#__codelineno-1-197" id="__codelineno-1-197" name="__codelineno-1-197"></a><span class="k">function</span> <span class="n">testtask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-198" id="__codelineno-1-198" name="__codelineno-1-198"></a>        <span class="nb">Test-Path</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="n">path</span><span class="p">)</span>
+<a href="#__codelineno-1-199" id="__codelineno-1-199" name="__codelineno-1-199"></a>        <span class="k">if</span><span class="p">(</span><span class="o">-not</span><span class="p">(</span><span class="nb">test-path</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="n">path</span><span class="p">))){</span>
+<a href="#__codelineno-1-200" id="__codelineno-1-200" name="__codelineno-1-200"></a>            <span class="p">&amp;</span> <span class="n">dna</span> <span class="p">$(</span><span class="nv">$task</span><span class="p">.</span><span class="n">destination</span><span class="p">)</span> <span class="n">email</span>
+<a href="#__codelineno-1-201" id="__codelineno-1-201" name="__codelineno-1-201"></a>        <span class="p">&amp;</span> <span class="n">dna</span> <span class="nv">$task</span><span class="p">.</span><span class="n">destination</span> <span class="n">email</span>
+<a href="#__codelineno-1-202" id="__codelineno-1-202" name="__codelineno-1-202"></a>        <span class="p">}</span>
+<a href="#__codelineno-1-203" id="__codelineno-1-203" name="__codelineno-1-203"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-204" id="__codelineno-1-204" name="__codelineno-1-204"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-205" id="__codelineno-1-205" name="__codelineno-1-205"></a>        <span class="p">}</span>  
+<a href="#__codelineno-1-206" id="__codelineno-1-206" name="__codelineno-1-206"></a><span class="p">}</span>
+<a href="#__codelineno-1-207" id="__codelineno-1-207" name="__codelineno-1-207"></a><span class="k">function</span> <span class="n">readtask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-208" id="__codelineno-1-208" name="__codelineno-1-208"></a>          <span class="nb">Get-Content</span> <span class="p">$(</span><span class="nv">$task</span><span class="p">.</span><span class="n">path</span><span class="p">)</span>
+<a href="#__codelineno-1-209" id="__codelineno-1-209" name="__codelineno-1-209"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-210" id="__codelineno-1-210" name="__codelineno-1-210"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-211" id="__codelineno-1-211" name="__codelineno-1-211"></a>        <span class="p">}</span>
+<a href="#__codelineno-1-212" id="__codelineno-1-212" name="__codelineno-1-212"></a><span class="p">}</span>
+<a href="#__codelineno-1-213" id="__codelineno-1-213" name="__codelineno-1-213"></a><span class="k">function</span> <span class="n">listtask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-214" id="__codelineno-1-214" name="__codelineno-1-214"></a>          <span class="nb">Get-ChildItem</span> <span class="nv">$task</span><span class="p">.</span><span class="n">path</span> <span class="n">-r</span>
+<a href="#__codelineno-1-215" id="__codelineno-1-215" name="__codelineno-1-215"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-216" id="__codelineno-1-216" name="__codelineno-1-216"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-217" id="__codelineno-1-217" name="__codelineno-1-217"></a>        <span class="p">}</span>  
+<a href="#__codelineno-1-218" id="__codelineno-1-218" name="__codelineno-1-218"></a><span class="p">}</span>
+<a href="#__codelineno-1-219" id="__codelineno-1-219" name="__codelineno-1-219"></a><span class="k">function</span> <span class="n">scrapetask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-220" id="__codelineno-1-220" name="__codelineno-1-220"></a>          <span class="nb">Invoke-WebRequest</span> <span class="nv">$task</span><span class="p">.</span><span class="n">path</span>
+<a href="#__codelineno-1-221" id="__codelineno-1-221" name="__codelineno-1-221"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-222" id="__codelineno-1-222" name="__codelineno-1-222"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-223" id="__codelineno-1-223" name="__codelineno-1-223"></a>        <span class="p">}</span>   
+<a href="#__codelineno-1-224" id="__codelineno-1-224" name="__codelineno-1-224"></a><span class="p">}</span>
+<a href="#__codelineno-1-225" id="__codelineno-1-225" name="__codelineno-1-225"></a><span class="k">function</span> <span class="n">servicetasktask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-226" id="__codelineno-1-226" name="__codelineno-1-226"></a>          <span class="nb">get-service</span> <span class="n">-ComputerName</span> <span class="nv">$task</span><span class="p">.</span><span class="n">path</span>
+<a href="#__codelineno-1-227" id="__codelineno-1-227" name="__codelineno-1-227"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-228" id="__codelineno-1-228" name="__codelineno-1-228"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-229" id="__codelineno-1-229" name="__codelineno-1-229"></a>        <span class="p">}</span> 
+<a href="#__codelineno-1-230" id="__codelineno-1-230" name="__codelineno-1-230"></a><span class="p">}</span>
+<a href="#__codelineno-1-231" id="__codelineno-1-231" name="__codelineno-1-231"></a><span class="k">function</span> <span class="n">atomtask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-232" id="__codelineno-1-232" name="__codelineno-1-232"></a>          <span class="n">atom</span> <span class="n">-n</span> <span class="n">-a</span> <span class="nv">$task</span><span class="p">.</span><span class="n">path</span>
+<a href="#__codelineno-1-233" id="__codelineno-1-233" name="__codelineno-1-233"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-234" id="__codelineno-1-234" name="__codelineno-1-234"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-235" id="__codelineno-1-235" name="__codelineno-1-235"></a>        <span class="p">}</span>  
+<a href="#__codelineno-1-236" id="__codelineno-1-236" name="__codelineno-1-236"></a><span class="p">}</span>
+<a href="#__codelineno-1-237" id="__codelineno-1-237" name="__codelineno-1-237"></a><span class="k">function</span> <span class="n">cliptask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-238" id="__codelineno-1-238" name="__codelineno-1-238"></a>        <span class="nv">$task</span><span class="p">.</span><span class="n">path</span> <span class="p">|</span> <span class="n">clip</span>
+<a href="#__codelineno-1-239" id="__codelineno-1-239" name="__codelineno-1-239"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-240" id="__codelineno-1-240" name="__codelineno-1-240"></a>        <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-241" id="__codelineno-1-241" name="__codelineno-1-241"></a>        <span class="p">}</span>
+<a href="#__codelineno-1-242" id="__codelineno-1-242" name="__codelineno-1-242"></a><span class="p">}</span>
+<a href="#__codelineno-1-243" id="__codelineno-1-243" name="__codelineno-1-243"></a><span class="k">function</span> <span class="n">findtask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-244" id="__codelineno-1-244" name="__codelineno-1-244"></a>        <span class="nb">get-childitem</span> <span class="n">-path</span> <span class="nv">$task</span><span class="p">.</span><span class="n">path</span> <span class="n">-r</span> <span class="p">|</span> <span class="nb">Select-String</span> <span class="n">-pattern</span> <span class="nv">$task</span><span class="p">.</span><span class="n">destination</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span><span class="nb">write-host</span> <span class="s2">"match in $task.path"</span><span class="p">}</span>
+<a href="#__codelineno-1-245" id="__codelineno-1-245" name="__codelineno-1-245"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-246" id="__codelineno-1-246" name="__codelineno-1-246"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-247" id="__codelineno-1-247" name="__codelineno-1-247"></a>        <span class="p">}</span>  
+<a href="#__codelineno-1-248" id="__codelineno-1-248" name="__codelineno-1-248"></a><span class="p">}</span>
+<a href="#__codelineno-1-249" id="__codelineno-1-249" name="__codelineno-1-249"></a><span class="k">function</span> <span class="n">filebackuptask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-250" id="__codelineno-1-250" name="__codelineno-1-250"></a>  <span class="nv">$newfile</span> <span class="p">=</span> <span class="s2">"</span><span class="p">$(</span><span class="nv">$task</span><span class="p">.</span><span class="n">path</span><span class="p">)</span><span class="s2">"</span> <span class="p">+</span> <span class="s2">"."</span> <span class="p">+</span> <span class="s2">"$isodate"</span>
+<a href="#__codelineno-1-251" id="__codelineno-1-251" name="__codelineno-1-251"></a>  <span class="nb">copy-item</span> <span class="n">-path</span> <span class="p">$(</span><span class="nv">$task</span><span class="p">.</span><span class="n">path</span><span class="p">)</span> <span class="n">-Destination</span> <span class="nv">$newfile</span> <span class="n">-Force</span>
+<a href="#__codelineno-1-252" id="__codelineno-1-252" name="__codelineno-1-252"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-253" id="__codelineno-1-253" name="__codelineno-1-253"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-254" id="__codelineno-1-254" name="__codelineno-1-254"></a>        <span class="p">}</span> 
+<a href="#__codelineno-1-255" id="__codelineno-1-255" name="__codelineno-1-255"></a><span class="p">}</span>
+<a href="#__codelineno-1-256" id="__codelineno-1-256" name="__codelineno-1-256"></a><span class="k">function</span> <span class="n">ownertask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-257" id="__codelineno-1-257" name="__codelineno-1-257"></a>    <span class="nb">get-acl</span> <span class="n">-Path</span> <span class="p">$(</span><span class="nv">$task</span><span class="p">.</span><span class="n">path</span><span class="p">)</span>
+<a href="#__codelineno-1-258" id="__codelineno-1-258" name="__codelineno-1-258"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-259" id="__codelineno-1-259" name="__codelineno-1-259"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-260" id="__codelineno-1-260" name="__codelineno-1-260"></a>        <span class="p">}</span>  
+<a href="#__codelineno-1-261" id="__codelineno-1-261" name="__codelineno-1-261"></a><span class="p">}</span>
+<a href="#__codelineno-1-262" id="__codelineno-1-262" name="__codelineno-1-262"></a><span class="k">function</span> <span class="n">zipfoldertask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-263" id="__codelineno-1-263" name="__codelineno-1-263"></a>    <span class="p">&amp;</span> <span class="s2">"C:\Program Files\7-Zip\7z.exe"</span> <span class="n">a</span> <span class="n">-mx</span><span class="p">=</span><span class="n">9</span>  <span class="p">$(</span><span class="nv">$task</span><span class="p">.</span><span class="n">destination</span><span class="p">)</span> <span class="p">$(</span><span class="nv">$task</span><span class="p">.</span><span class="n">path</span><span class="p">)</span>
+<a href="#__codelineno-1-264" id="__codelineno-1-264" name="__codelineno-1-264"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-265" id="__codelineno-1-265" name="__codelineno-1-265"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-266" id="__codelineno-1-266" name="__codelineno-1-266"></a>        <span class="p">}</span> 
+<a href="#__codelineno-1-267" id="__codelineno-1-267" name="__codelineno-1-267"></a><span class="p">}</span>
+<a href="#__codelineno-1-268" id="__codelineno-1-268" name="__codelineno-1-268"></a><span class="k">function</span> <span class="n">emailtask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-269" id="__codelineno-1-269" name="__codelineno-1-269"></a><span class="nv">$param</span> <span class="p">=</span> <span class="p">@{</span>
+<a href="#__codelineno-1-270" id="__codelineno-1-270" name="__codelineno-1-270"></a>    <span class="n">SmtpServer</span> <span class="p">=</span> <span class="s1">'1.0.0.1'</span>
+<a href="#__codelineno-1-271" id="__codelineno-1-271" name="__codelineno-1-271"></a>    <span class="n">From</span> <span class="p">=</span> <span class="s1">'SUPPORT@your.com'</span>
+<a href="#__codelineno-1-272" id="__codelineno-1-272" name="__codelineno-1-272"></a>    <span class="n">To</span> <span class="p">=</span> <span class="nv">$task</span><span class="p">.</span><span class="n">destination</span>
+<a href="#__codelineno-1-273" id="__codelineno-1-273" name="__codelineno-1-273"></a>    <span class="n">Subject</span> <span class="p">=</span> <span class="nv">$task</span><span class="p">.</span><span class="n">path</span>
+<a href="#__codelineno-1-274" id="__codelineno-1-274" name="__codelineno-1-274"></a>    <span class="n">Body</span> <span class="p">=</span> <span class="s2">"&lt;html&gt;&lt;body&gt;</span><span class="p">$(</span><span class="nv">$task</span><span class="p">.</span><span class="n">type</span><span class="p">)</span><span class="s2">&lt;br&gt;&lt;/body&gt;&lt;/html&gt;"</span>
+<a href="#__codelineno-1-275" id="__codelineno-1-275" name="__codelineno-1-275"></a>    <span class="n">BodyAsHtml</span> <span class="p">=</span> <span class="nv">$true</span>
+<a href="#__codelineno-1-276" id="__codelineno-1-276" name="__codelineno-1-276"></a><span class="p">}</span>
+<a href="#__codelineno-1-277" id="__codelineno-1-277" name="__codelineno-1-277"></a><span class="nb">Send-MailMessage</span> <span class="nv">@param</span>
+<a href="#__codelineno-1-278" id="__codelineno-1-278" name="__codelineno-1-278"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-279" id="__codelineno-1-279" name="__codelineno-1-279"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-280" id="__codelineno-1-280" name="__codelineno-1-280"></a>        <span class="p">}</span>
+<a href="#__codelineno-1-281" id="__codelineno-1-281" name="__codelineno-1-281"></a><span class="p">}</span>
+<a href="#__codelineno-1-282" id="__codelineno-1-282" name="__codelineno-1-282"></a>
+<a href="#__codelineno-1-283" id="__codelineno-1-283" name="__codelineno-1-283"></a><span class="k">function</span> <span class="n">removelinetask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-284" id="__codelineno-1-284" name="__codelineno-1-284"></a>    <span class="nv">$match</span> <span class="p">=</span> <span class="nv">$task</span><span class="p">.</span><span class="nb">type</span>
+<a href="#__codelineno-1-285" id="__codelineno-1-285" name="__codelineno-1-285"></a>    <span class="nv">$clean</span> <span class="p">=</span> <span class="nb">Get-Content</span> <span class="nv">$task</span><span class="p">.</span><span class="n">path</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span><span class="nv">$_</span> <span class="o">-notmatch</span> <span class="nv">$match</span><span class="p">}</span> 
+<a href="#__codelineno-1-286" id="__codelineno-1-286" name="__codelineno-1-286"></a>    <span class="nb">new-item</span> <span class="nv">$task</span><span class="p">.</span><span class="n">destination</span> <span class="n">-ItemType</span> <span class="n">file</span>
+<a href="#__codelineno-1-287" id="__codelineno-1-287" name="__codelineno-1-287"></a>    <span class="nb">Clear-Content</span> <span class="nv">$task</span><span class="p">.</span><span class="n">destination</span>
+<a href="#__codelineno-1-288" id="__codelineno-1-288" name="__codelineno-1-288"></a>    <span class="nv">$clean</span> <span class="p">|</span> <span class="nb">Out-File</span> <span class="nv">$task</span><span class="p">.</span><span class="n">destination</span>
+<a href="#__codelineno-1-289" id="__codelineno-1-289" name="__codelineno-1-289"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-290" id="__codelineno-1-290" name="__codelineno-1-290"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-291" id="__codelineno-1-291" name="__codelineno-1-291"></a>        <span class="p">}</span>    
+<a href="#__codelineno-1-292" id="__codelineno-1-292" name="__codelineno-1-292"></a><span class="p">}</span>
+<a href="#__codelineno-1-293" id="__codelineno-1-293" name="__codelineno-1-293"></a>
+<a href="#__codelineno-1-294" id="__codelineno-1-294" name="__codelineno-1-294"></a><span class="k">function</span> <span class="n">replacelinetask</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-295" id="__codelineno-1-295" name="__codelineno-1-295"></a>    <span class="p">(</span><span class="nb">Get-Content</span> <span class="nv">$task</span><span class="p">.</span><span class="n">path</span><span class="p">)</span> <span class="p">|</span> 
+<a href="#__codelineno-1-296" id="__codelineno-1-296" name="__codelineno-1-296"></a>        <span class="k">Foreach</span><span class="n">-Object</span> <span class="p">{</span><span class="nv">$_</span> <span class="o">-replace</span> <span class="nv">$task</span><span class="p">.</span><span class="n">destination</span><span class="p">,</span> <span class="nv">$task</span><span class="p">.</span><span class="n">type</span><span class="p">}</span>  <span class="p">|</span> 
+<a href="#__codelineno-1-297" id="__codelineno-1-297" name="__codelineno-1-297"></a>    <span class="nb">Out-File</span> <span class="nv">$task</span><span class="p">.</span><span class="n">path</span>
+<a href="#__codelineno-1-298" id="__codelineno-1-298" name="__codelineno-1-298"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-299" id="__codelineno-1-299" name="__codelineno-1-299"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-300" id="__codelineno-1-300" name="__codelineno-1-300"></a>        <span class="p">}</span>
+<a href="#__codelineno-1-301" id="__codelineno-1-301" name="__codelineno-1-301"></a><span class="p">}</span>
+<a href="#__codelineno-1-302" id="__codelineno-1-302" name="__codelineno-1-302"></a><span class="k">function</span> <span class="n">expressionset</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-303" id="__codelineno-1-303" name="__codelineno-1-303"></a>        <span class="nb">Invoke-Expression</span> <span class="s2">"&amp; </span><span class="p">$(</span><span class="nv">$task</span><span class="p">.</span><span class="n">path</span><span class="p">)</span><span class="s2">"</span>
+<a href="#__codelineno-1-304" id="__codelineno-1-304" name="__codelineno-1-304"></a>        <span class="k">if</span><span class="p">(</span><span class="nv">$task</span><span class="p">.</span><span class="k">continue</span> <span class="o">-eq</span> <span class="s1">'y'</span><span class="p">){</span>
+<a href="#__codelineno-1-305" id="__codelineno-1-305" name="__codelineno-1-305"></a>            <span class="n">subchain</span> <span class="nv">$task</span>
+<a href="#__codelineno-1-306" id="__codelineno-1-306" name="__codelineno-1-306"></a>        <span class="p">}</span> 
+<a href="#__codelineno-1-307" id="__codelineno-1-307" name="__codelineno-1-307"></a><span class="p">}</span>
+<a href="#__codelineno-1-308" id="__codelineno-1-308" name="__codelineno-1-308"></a>
+<a href="#__codelineno-1-309" id="__codelineno-1-309" name="__codelineno-1-309"></a>
+<a href="#__codelineno-1-310" id="__codelineno-1-310" name="__codelineno-1-310"></a><span class="c"># these are logic for running a whole project or just one type of action for one project</span>
+<a href="#__codelineno-1-311" id="__codelineno-1-311" name="__codelineno-1-311"></a><span class="k">function</span> <span class="n">subchain</span><span class="p">(</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-312" id="__codelineno-1-312" name="__codelineno-1-312"></a>       <span class="p">&amp;</span> <span class="n">dna</span> <span class="nv">$task</span><span class="p">.</span><span class="n">subproject</span> <span class="nv">$task</span><span class="p">.</span><span class="n">subaction</span>
+<a href="#__codelineno-1-313" id="__codelineno-1-313" name="__codelineno-1-313"></a><span class="p">}</span>
+<a href="#__codelineno-1-314" id="__codelineno-1-314" name="__codelineno-1-314"></a>
+<a href="#__codelineno-1-315" id="__codelineno-1-315" name="__codelineno-1-315"></a><span class="k">function</span> <span class="n">runone</span><span class="p">(</span><span class="nv">$action</span><span class="p">,</span><span class="nv">$task</span><span class="p">){</span>
+<a href="#__codelineno-1-316" id="__codelineno-1-316" name="__codelineno-1-316"></a>      <span class="k">switch</span> <span class="p">(</span><span class="nv">$action</span><span class="p">)</span> <span class="p">{</span>
+<a href="#__codelineno-1-317" id="__codelineno-1-317" name="__codelineno-1-317"></a>      <span class="n">get</span> <span class="p">{</span><span class="n">gettask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-318" id="__codelineno-1-318" name="__codelineno-1-318"></a>      <span class="n">put</span> <span class="p">{</span><span class="n">puttask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-319" id="__codelineno-1-319" name="__codelineno-1-319"></a>      <span class="nb">move </span><span class="p">{</span><span class="n">movetask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-320" id="__codelineno-1-320" name="__codelineno-1-320"></a>      <span class="nb">copy </span> <span class="p">{</span><span class="n">copytask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-321" id="__codelineno-1-321" name="__codelineno-1-321"></a>      <span class="n">clip</span> <span class="p">{</span><span class="n">cliptask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-322" id="__codelineno-1-322" name="__codelineno-1-322"></a>      <span class="n">rename</span> <span class="p">{</span><span class="n">renametask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-323" id="__codelineno-1-323" name="__codelineno-1-323"></a>      <span class="n">new</span>  <span class="p">{</span><span class="n">newtask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-324" id="__codelineno-1-324" name="__codelineno-1-324"></a>      <span class="n">remove</span> <span class="p">{</span><span class="n">removetask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-325" id="__codelineno-1-325" name="__codelineno-1-325"></a>      <span class="n">invoke</span>  <span class="p">{</span><span class="n">invoketask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-326" id="__codelineno-1-326" name="__codelineno-1-326"></a>      <span class="nb">clear </span><span class="p">{</span><span class="n">cleartask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-327" id="__codelineno-1-327" name="__codelineno-1-327"></a>      <span class="n">add</span> <span class="p">{</span><span class="n">addtask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-328" id="__codelineno-1-328" name="__codelineno-1-328"></a>      <span class="n">cmd</span> <span class="p">{</span><span class="n">cmdtask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-329" id="__codelineno-1-329" name="__codelineno-1-329"></a>      <span class="n">url</span> <span class="p">{</span><span class="n">urltask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-330" id="__codelineno-1-330" name="__codelineno-1-330"></a>      <span class="n">test</span> <span class="p">{</span><span class="n">testtask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-331" id="__codelineno-1-331" name="__codelineno-1-331"></a>      <span class="n">list</span> <span class="p">{</span><span class="n">listtask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-332" id="__codelineno-1-332" name="__codelineno-1-332"></a>      <span class="n">read</span> <span class="p">{</span><span class="n">readtask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-333" id="__codelineno-1-333" name="__codelineno-1-333"></a>      <span class="n">scrape</span> <span class="p">{</span><span class="n">scrapetask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-334" id="__codelineno-1-334" name="__codelineno-1-334"></a>      <span class="n">service</span> <span class="p">{</span><span class="n">servicetask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-335" id="__codelineno-1-335" name="__codelineno-1-335"></a>      <span class="n">atom</span> <span class="p">{</span><span class="n">atomtask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-336" id="__codelineno-1-336" name="__codelineno-1-336"></a>      <span class="n">find</span> <span class="p">{</span><span class="n">findtask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-337" id="__codelineno-1-337" name="__codelineno-1-337"></a>      <span class="n">filebackup</span> <span class="p">{</span><span class="n">filebackuptask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-338" id="__codelineno-1-338" name="__codelineno-1-338"></a>      <span class="n">zip</span> <span class="p">{</span><span class="n">zipfoldertask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-339" id="__codelineno-1-339" name="__codelineno-1-339"></a>      <span class="n">owner</span> <span class="p">{</span><span class="n">ownertask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-340" id="__codelineno-1-340" name="__codelineno-1-340"></a>      <span class="n">email</span> <span class="p">{</span><span class="n">emailtask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-341" id="__codelineno-1-341" name="__codelineno-1-341"></a>      <span class="n">removeline</span> <span class="p">{</span><span class="n">removelinetask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-342" id="__codelineno-1-342" name="__codelineno-1-342"></a>      <span class="n">replacestring</span> <span class="p">{</span><span class="n">replacelinetask</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-343" id="__codelineno-1-343" name="__codelineno-1-343"></a>      <span class="n">iexp</span> <span class="p">{</span><span class="n">expressionset</span> <span class="nv">$task</span><span class="p">}</span>
+<a href="#__codelineno-1-344" id="__codelineno-1-344" name="__codelineno-1-344"></a>        <span class="k">default</span> <span class="p">{</span><span class="s2">"missing parameters"</span><span class="p">}</span>
+<a href="#__codelineno-1-345" id="__codelineno-1-345" name="__codelineno-1-345"></a>      <span class="p">}</span>
+<a href="#__codelineno-1-346" id="__codelineno-1-346" name="__codelineno-1-346"></a><span class="p">}</span>
+<a href="#__codelineno-1-347" id="__codelineno-1-347" name="__codelineno-1-347"></a>
+<a href="#__codelineno-1-348" id="__codelineno-1-348" name="__codelineno-1-348"></a>
+<a href="#__codelineno-1-349" id="__codelineno-1-349" name="__codelineno-1-349"></a>
+<a href="#__codelineno-1-350" id="__codelineno-1-350" name="__codelineno-1-350"></a><span class="k">function</span> <span class="n">runproject</span><span class="p">{</span>
+<a href="#__codelineno-1-351" id="__codelineno-1-351" name="__codelineno-1-351"></a>  <span class="nv">$projectset</span> <span class="p">=</span> <span class="nv">$csvdata</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">project</span> <span class="o">-eq</span> <span class="nv">$project</span><span class="p">}</span>
+<a href="#__codelineno-1-352" id="__codelineno-1-352" name="__codelineno-1-352"></a>    <span class="k">foreach</span><span class="p">(</span><span class="nv">$_</span> <span class="k">in</span> <span class="nv">$projectset</span><span class="p">){</span>
+<a href="#__codelineno-1-353" id="__codelineno-1-353" name="__codelineno-1-353"></a>        <span class="nv">$action</span> <span class="p">=</span> <span class="nv">$_</span><span class="p">.</span><span class="n">action</span>
+<a href="#__codelineno-1-354" id="__codelineno-1-354" name="__codelineno-1-354"></a>        <span class="n">runone</span> <span class="n">-action</span> <span class="nv">$action</span> <span class="n">-task</span> <span class="nv">$_</span>
+<a href="#__codelineno-1-355" id="__codelineno-1-355" name="__codelineno-1-355"></a>        <span class="nb">start-sleep</span> <span class="n">-s</span> <span class="p">.</span><span class="n">5</span>
+<a href="#__codelineno-1-356" id="__codelineno-1-356" name="__codelineno-1-356"></a>    <span class="p">}</span>
+<a href="#__codelineno-1-357" id="__codelineno-1-357" name="__codelineno-1-357"></a><span class="p">}</span>
+<a href="#__codelineno-1-358" id="__codelineno-1-358" name="__codelineno-1-358"></a>
+<a href="#__codelineno-1-359" id="__codelineno-1-359" name="__codelineno-1-359"></a>
+<a href="#__codelineno-1-360" id="__codelineno-1-360" name="__codelineno-1-360"></a><span class="k">function</span> <span class="n">filteroneaction</span><span class="p">(</span><span class="nv">$action</span><span class="p">){</span>
+<a href="#__codelineno-1-361" id="__codelineno-1-361" name="__codelineno-1-361"></a>  <span class="nv">$taskset</span> <span class="p">=</span> <span class="nv">$csvdata</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">project</span> <span class="o">-eq</span> <span class="nv">$project</span> <span class="o">-and</span> <span class="nv">$_</span><span class="p">.</span><span class="n">action</span> <span class="o">-eq</span> <span class="nv">$action</span><span class="p">}</span>
+<a href="#__codelineno-1-362" id="__codelineno-1-362" name="__codelineno-1-362"></a>  <span class="k">foreach</span><span class="p">(</span><span class="nv">$_</span> <span class="k">in</span> <span class="nv">$taskset</span><span class="p">){</span>
+<a href="#__codelineno-1-363" id="__codelineno-1-363" name="__codelineno-1-363"></a>        <span class="n">runone</span> <span class="n">-action</span> <span class="nv">$_</span><span class="p">.</span><span class="n">action</span> <span class="n">-task</span> <span class="nv">$_</span>
+<a href="#__codelineno-1-364" id="__codelineno-1-364" name="__codelineno-1-364"></a>  <span class="p">}</span>
+<a href="#__codelineno-1-365" id="__codelineno-1-365" name="__codelineno-1-365"></a><span class="p">}</span>
+<a href="#__codelineno-1-366" id="__codelineno-1-366" name="__codelineno-1-366"></a>
+<a href="#__codelineno-1-367" id="__codelineno-1-367" name="__codelineno-1-367"></a><span class="k">if</span><span class="p">(</span><span class="nv">$action</span> <span class="o">-eq</span> <span class="nv">$null</span><span class="p">){</span>
+<a href="#__codelineno-1-368" id="__codelineno-1-368" name="__codelineno-1-368"></a>  <span class="nb">write-host</span> <span class="s2">"no action passed running all actions on project $project"</span>
+<a href="#__codelineno-1-369" id="__codelineno-1-369" name="__codelineno-1-369"></a>  <span class="n">runproject</span>
+<a href="#__codelineno-1-370" id="__codelineno-1-370" name="__codelineno-1-370"></a><span class="p">}</span>
+<a href="#__codelineno-1-371" id="__codelineno-1-371" name="__codelineno-1-371"></a><span class="k">elseif</span> <span class="p">(</span><span class="nv">$action</span> <span class="o">-ne</span> <span class="nv">$null</span><span class="p">)</span> <span class="p">{</span>
+<a href="#__codelineno-1-372" id="__codelineno-1-372" name="__codelineno-1-372"></a>  <span class="nb">write-host</span> <span class="s2">"running only task type $action on project $project"</span>
+<a href="#__codelineno-1-373" id="__codelineno-1-373" name="__codelineno-1-373"></a>  <span class="n">filteroneaction</span> <span class="nv">$action</span>
+<a href="#__codelineno-1-374" id="__codelineno-1-374" name="__codelineno-1-374"></a>
+<a href="#__codelineno-1-375" id="__codelineno-1-375" name="__codelineno-1-375"></a><span class="p">}</span>
+</code></pre></div>
+<hr/>
+<div class="md-source-file">
+<small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 14, 2023</span>
+<br/>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 14, 2023</span>
+</small>
+</div>
+<script async="" crossorigin="anonymous" data-category="General" data-category-id="DIC_kwDOKV1JuM4CZeX2" data-emit-metadata="0" data-input-position="bottom" data-lang="en" data-mapping="pathname" data-reactions-enabled="1" data-repo="shane0/cheatsheets" data-repo-id="R_kgDOKV1JuA" data-strict="0" data-theme="noborder_dark" src="https://giscus.app/client.js">
+</script>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: js" class="md-footer__link md-footer__link--prev" href="../../js/js/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                  Previous
+                </span>
+                js
+              </div>
+</div>
+</a>
+<a aria-label="Next: basics" class="md-footer__link md-footer__link--next" href="../../python/basics/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                  Next
+                </span>
+                basics
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://shanenull.com/" rel="noopener" target="_blank" title="shanenull.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 8C119.3 8 8 119.2 8 256c0 136.7 111.3 248 248 248s248-111.3 248-248C504 119.2 392.7 8 256 8zM33 256c0-32.3 6.9-63 19.3-90.7l106.4 291.4C84.3 420.5 33 344.2 33 256zm223 223c-21.9 0-43-3.2-63-9.1l66.9-194.4 68.5 187.8c.5 1.1 1 2.1 1.6 3.1-23.1 8.1-48 12.6-74 12.6zm30.7-327.5c13.4-.7 25.5-2.1 25.5-2.1 12-1.4 10.6-19.1-1.4-18.4 0 0-36.1 2.8-59.4 2.8-21.9 0-58.7-2.8-58.7-2.8-12-.7-13.4 17.7-1.4 18.4 0 0 11.4 1.4 23.4 2.1l34.7 95.2L200.6 393l-81.2-241.5c13.4-.7 25.5-2.1 25.5-2.1 12-1.4 10.6-19.1-1.4-18.4 0 0-36.1 2.8-59.4 2.8-4.2 0-9.1-.1-14.4-.3C109.6 73 178.1 33 256 33c58 0 110.9 22.2 150.6 58.5-1-.1-1.9-.2-2.9-.2-21.9 0-37.4 19.1-37.4 39.6 0 18.4 10.6 33.9 21.9 52.3 8.5 14.8 18.4 33.9 18.4 61.5 0 19.1-7.3 41.2-17 72.1l-22.2 74.3-80.7-239.6zm81.4 297.2 68.1-196.9c12.7-31.8 17-57.2 17-79.9 0-8.2-.5-15.8-1.5-22.9 17.4 31.8 27.3 68.2 27.3 107 0 82.3-44.6 154.1-110.9 192.7z"></path></svg>
+</a>
+<a class="md-social__link" href="https://shane0.pythonanywhere.com/" rel="noopener" target="_blank" title="shane0.pythonanywhere.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"></path></svg>
+</a>
+<a class="md-social__link" href="http://www.youtube.com/c/ShaneNull" rel="noopener" target="_blank" title="www.youtube.com">
+<svg viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg>
+</a>
+<a class="md-social__link" href="https://www.instagram.com/nullshane/" rel="noopener" target="_blank" title="www.instagram.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
+</a>
+<a class="md-social__link" href="https://earmassagetherapist.bandcamp.com/releases" rel="noopener" target="_blank" title="earmassagetherapist.bandcamp.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8Zm48.2 326.1h-181L207.9 178h181Z"></path></svg>
+</a>
+<a class="md-social__link" href="https://shane0.github.io/" rel="noopener" target="_blank" title="shane0.github.io">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="https://gitlab.com/shane0" rel="noopener" target="_blank" title="gitlab.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m503.5 204.6-.7-1.8-69.7-181.78c-1.4-3.57-3.9-6.59-7.2-8.64-2.4-1.55-5.1-2.515-8-2.81-2.9-.295-5.7.083-8.4 1.11-2.7 1.02-5.1 2.66-7.1 4.78-1.9 2.12-3.3 4.67-4.1 7.44l-47 144H160.8l-47.1-144c-.8-2.77-2.2-5.31-4.1-7.43-2-2.12-4.4-3.75-7.1-4.77a18.1 18.1 0 0 0-8.38-1.113 18.4 18.4 0 0 0-8.04 2.793 18.09 18.09 0 0 0-7.16 8.64L9.267 202.8l-.724 1.8a129.57 129.57 0 0 0-3.52 82c7.747 26.9 24.047 50.7 46.447 67.6l.27.2.59.4 105.97 79.5 52.6 39.7 32 24.2c3.7 1.9 8.3 4.3 13 4.3 4.7 0 9.3-2.4 13-4.3l32-24.2 52.6-39.7 106.7-79.9.3-.3c22.4-16.9 38.7-40.6 45.6-67.5 8.6-27 7.4-55.8-2.6-82z"></path></svg>
+</a>
+<a class="md-social__link" href="https://twitter.com/shane_null" rel="noopener" target="_blank" title="twitter.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>
+</a>
+<a class="md-social__link" href="https://www.linkedin.com/in/shanenull" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "content.action.view", "navigation.footer"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": 2023, "provider": "mike"}}</script>
+<script src="../../assets/javascripts/bundle.51d95adb.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js?tex"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

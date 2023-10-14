@@ -5,18 +5,18 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../css/" rel="prev"/>
-<link href="../find/" rel="next"/>
-<link href="../assets/images/favicon.png" rel="icon"/>
+<link href="../../bujo/bujo/" rel="prev"/>
+<link href="../flask/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.6" name="generator"/>
 <title>django - cheatsheets</title>
-<link href="../assets/stylesheets/main.558e4712.min.css" rel="stylesheet"/>
-<link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.558e4712.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -27,7 +27,7 @@
                 body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
                 body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
                 body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-                </style><script src="../assets/javascripts/glightbox.min.js"></script></head>
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
 <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
@@ -44,7 +44,7 @@
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="cheatsheets" class="md-header__button md-logo" data-md-component="logo" href=".." title="cheatsheets">
+<a aria-label="cheatsheets" class="md-header__button md-logo" data-md-component="logo" href="../.." title="cheatsheets">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
@@ -126,7 +126,7 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="cheatsheets" class="md-nav__button md-logo" data-md-component="logo" href=".." title="cheatsheets">
+<a aria-label="cheatsheets" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="cheatsheets">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
 </a>
     cheatsheets
@@ -143,158 +143,157 @@
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="..">
+<a class="md-nav__link" href="../..">
         Home
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../backups/">
+<a class="md-nav__link" href="../../backups/">
         backups
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../bash/">
+<a class="md-nav__link" href="../../bash/">
         bash
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../click/">
+<a class="md-nav__link" href="../../characters/">
+        strange characters
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../click/">
         click
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../cookiecutter/">
+<a class="md-nav__link" href="../../cookiecutter/">
         cookiecutter
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../css/">
+<a class="md-nav__link" href="../../css/">
         css
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<a class="md-nav__link md-nav__link--active" href="./">
-        django
-      </a>
-</li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../find/">
+<a class="md-nav__link" href="../../find/">
         Find
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../fixtures/">
+<a class="md-nav__link" href="../../fixtures/">
         fixtures
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../flask/">
+<a class="md-nav__link" href="../../flask/">
         flask
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../folders/">
+<a class="md-nav__link" href="../../folders/">
         folders
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../fzf/">
+<a class="md-nav__link" href="../../fzf/">
         fuzzy finder
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../html/">
+<a class="md-nav__link" href="../../git/">
+        git
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../html/">
         html
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../jobs/">
+<a class="md-nav__link" href="../../jobs/">
         jobs
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../js/">
-        js
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../julian/">
+<a class="md-nav__link" href="../../julian/">
         julian dates
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../linux/">
+<a class="md-nav__link" href="../../linux/">
         linux
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../macos/">
+<a class="md-nav__link" href="../../macos/">
         mac os
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../markdown/">
+<a class="md-nav__link" href="../../markdown/">
         markdown
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../mkdocs/">
+<a class="md-nav__link" href="../../mkdocs/">
         mkdocs
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../mongo/">
+<a class="md-nav__link" href="../../mongo/">
         mongo
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../pip/">
+<a class="md-nav__link" href="../../pip/">
         pip
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../postgres/">
+<a class="md-nav__link" href="../../postgres/">
         postgres
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../powershell/">
+<a class="md-nav__link" href="../../powershell/">
         powershell
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../python/">
+<a class="md-nav__link" href="../../python/">
         python
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../react/">
+<a class="md-nav__link" href="../../react/">
         react
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../regex/">
+<a class="md-nav__link" href="../../regex/">
         regex
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../scraping/">
+<a class="md-nav__link" href="../../scraping/">
         scraping content
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../todocli/">
+<a class="md-nav__link" href="../../todocli/">
         todo cli
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../users/">
+<a class="md-nav__link" href="../../users/">
         users
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../vim/">
+<a class="md-nav__link" href="../../vim/">
         vim
       </a>
 </li>
@@ -311,13 +310,141 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../bujo/2023/">
+<a class="md-nav__link" href="../../bujo/2023/">
         2023
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../bujo/bujo/">
+<a class="md-nav__link" href="../../bujo/bujo/">
         bullet journaling
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_33" id="__nav_33" type="checkbox"/>
+<label aria-expanded="true" class="md-nav__link" for="__nav_33" tabindex="0">
+          Django
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Django" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_33">
+<span class="md-nav__icon md-icon"></span>
+          Django
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          django
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        django
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hosting">
+    hosting
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../flask/">
+        flask
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../folders_files/">
+        folders and files
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../home/">
+        home page app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../home_fancy/">
+        home page app fancy version
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../upload/">
+        upload a file
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_34" id="__nav_34" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_34" tabindex="0">
+          Js
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Js" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_34">
+<span class="md-nav__icon md-icon"></span>
+          Js
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../js/introspect/">
+        introspection
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../js/js/">
+        js
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_35" id="__nav_35" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_35" tabindex="0">
+          Powershell
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Powershell" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_35">
+<span class="md-nav__icon md-icon"></span>
+          Powershell
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../powershell/powershell/">
+        never use powershell
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_36" id="__nav_36" type="checkbox"/>
+<label aria-expanded="false" class="md-nav__link" for="__nav_36" tabindex="0">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Python" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_36">
+<span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../python/basics/">
+        basics
       </a>
 </li>
 </ul>
@@ -332,36 +459,79 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hosting">
+    hosting
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/shane0/cheatsheets/edit/main/docs/django.md" title="Edit this page">
+<nav class="md-tags">
+<a class="md-tag" href="../../#django">django</a>
+</nav>
+<a class="md-content__button md-icon" href="https://github.com/shane0/cheatsheets/edit/main/docs/django/django.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
 </a>
-<a class="md-content__button md-icon" href="https://github.com/shane0/cheatsheets/raw/main/docs/django.md" title="View source of this page">
+<a class="md-content__button md-icon" href="https://github.com/shane0/cheatsheets/raw/main/docs/django/django.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
 <h1 id="django">django<a class="headerlink" href="#django" title="Permanent link">¶</a></h1>
+<ul>
+<li>i have a django site here that i tinker with</li>
+<li><a href="https://shane0.pythonanywhere.com/">https://shane0.pythonanywhere.com/</a></li>
+<li>see youtube link bottom of page</li>
+<li>I have some django screencasts</li>
+<li>use it for websites, front or back end</li>
+<li>django is a huge time saver</li>
+<li>has a bunch of stuff built in</li>
+<li>todo: put my django click app here</li>
+</ul>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># django</span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nb">alias</span><span class="w"> </span><span class="nv">dr</span><span class="o">=</span><span class="s1">'python manage.py runserver 8000'</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nb">alias</span><span class="w"> </span><span class="nv">vvv</span><span class="o">=</span><span class="s1">'virtualevn venv'</span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nb">alias</span><span class="w"> </span><span class="nv">vv</span><span class="o">=</span><span class="s1">'source venv/bin/activate'</span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nb">alias</span><span class="w"> </span><span class="nv">vf</span><span class="o">=</span><span class="s1">'pip install --editable .'</span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="nb">alias</span><span class="w"> </span><span class="nv">vr</span><span class="o">=</span><span class="s1">'pip install -r requirements.txt'</span>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="nb">alias</span><span class="w"> </span><span class="nv">lt</span><span class="o">=</span><span class="s1">'ls --human-readable --size -1 -S --classify'</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>python<span class="w"> </span>manage.py<span class="w"> </span>runserver
 <a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>python<span class="w"> </span>manage.py<span class="w"> </span>makemigrations
 <a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
 <a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>python<span class="w"> </span>manage.py<span class="w"> </span>migrate<span class="w"> </span>--run-syncdb
 </code></pre></div>
+<h2 id="hosting">hosting<a class="headerlink" href="#hosting" title="Permanent link">¶</a></h2>
+<ul>
+<li>pythonanywhere is free and works with a sqlite db</li>
+<li>if you want postgres you can use supabase for free</li>
+<li>pythonanywhere does not allow connecting to supabase unless you pay</li>
+<li>this was an annoying waste of time just to determine what the errors meant</li>
+<li>I had to dig into their forums to find a user that explained you have to pay to enable it</li>
+<li>side note about python anywhere: fastapi requires asgi &amp; they only provide wsgi</li>
+<li>I've tried a few other ways to host django</li>
+<li>google cloud run</li>
+<li>aws</li>
+<li>linode &amp; openlitespeed</li>
+<li>python anywhere is the only one I stuck with</li>
+</ul>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 1, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 14, 2023</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 20, 2023</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 14, 2023</span>
 </small>
 </div>
 <script async="" crossorigin="anonymous" data-category="General" data-category-id="DIC_kwDOKV1JuM4CZeX2" data-emit-metadata="0" data-input-position="bottom" data-lang="en" data-mapping="pathname" data-reactions-enabled="1" data-repo="shane0/cheatsheets" data-repo-id="R_kgDOKV1JuA" data-strict="0" data-theme="noborder_dark" src="https://giscus.app/client.js">
@@ -372,7 +542,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: css" class="md-footer__link md-footer__link--prev" href="../css/" rel="prev">
+<a aria-label="Previous: bullet journaling" class="md-footer__link md-footer__link--prev" href="../../bujo/bujo/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -381,17 +551,17 @@
 <span class="md-footer__direction">
                   Previous
                 </span>
-                css
+                bullet journaling
               </div>
 </div>
 </a>
-<a aria-label="Next: Find" class="md-footer__link md-footer__link--next" href="../find/" rel="next">
+<a aria-label="Next: flask" class="md-footer__link md-footer__link--next" href="../flask/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                   Next
                 </span>
-                Find
+                flask
               </div>
 </div>
 <div class="md-footer__button md-icon">
@@ -445,8 +615,8 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.action.edit", "content.action.view", "navigation.footer"], "search": "../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": 2023, "provider": "mike"}}</script>
-<script src="../assets/javascripts/bundle.51d95adb.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "content.action.view", "navigation.footer"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": 2023, "provider": "mike"}}</script>
+<script src="../../assets/javascripts/bundle.51d95adb.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js?tex"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
