@@ -7,5 +7,6 @@ du -sh /dirname
 ```
 
 ```sh
-mkdir "$(date +"%F")"
+alias jf='mkdir "$(date +%F)" && cd "$(date +%F)"'
+alias fj='vim ./"$(date +%F)".md'
 ```

@@ -12,3 +12,11 @@ alias week='date +%V'
 alias month='date +%B && date +%m'
 alias year='date +%Y'
 ```
+
+## python
+
+- find my code
+
+## js
+
+- find my code
