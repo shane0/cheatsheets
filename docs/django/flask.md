@@ -1,5 +1,14 @@
 # flask
 
+```sh
+alias efl='export FLASK_ENV=development'
+alias eefl='echo $FLASK_ENV'
+alias fdm='flask db migrate'
+alias fdu='flask db upgrade'
+```
+
+## old snippets
+
 - digging up old python hacks do not try these at home
 
 ```python
